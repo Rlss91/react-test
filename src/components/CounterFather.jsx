@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CounterC from "./CounterC";
+import CounterCLess from "./CounterCLess";
 
 export default class CounterFather extends Component {
   state = {
@@ -19,7 +20,7 @@ export default class CounterFather extends Component {
         <div>{this.state.total}</div>
         {this.state.counters.map((item, idx) => {
           return (
-            <CounterC
+            <CounterCLess
               key={idx}
               aindex={idx}
               startval={item}

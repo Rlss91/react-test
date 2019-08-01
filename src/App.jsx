@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import CounterFather from "./components/CounterFather";
+import HookComponent from "./components/HookComponent";
 import "./App.css";
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
           onChange={this.handlePsChange}
         />
         <CounterFather />
+        <HookComponent />
       </div>
     );
   }
