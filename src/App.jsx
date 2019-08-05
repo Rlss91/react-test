@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import CounterFather from "./components/CounterFather";
 import HookComponent from "./components/HookComponent";
+import Main from "./components/lifecycle/Main";
 import "./App.css";
 
 class App extends Component {
@@ -21,14 +22,15 @@ class App extends Component {
     // console.log(this)
     return (
       <div className="App">
-        <input
+        {/* <input
           type="text"
           name="ps"
           value={this.state.ps}
           onChange={this.handlePsChange}
         />
         <CounterFather />
-        <HookComponent />
+        <HookComponent /> */}
+        <Main />
       </div>
     );
   }
