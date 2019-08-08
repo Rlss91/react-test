@@ -26,7 +26,6 @@ export default class PagesMain extends Component {
   filterArray = () => {
     let idx = 0;
     let arr = [];
-
     for (let item of this.state.data) {
       if (
         idx >= this.state.startidx &&
