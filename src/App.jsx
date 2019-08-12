@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PagesMain from "./components/pagination/PagesMain";
 import Online from "./components/Online";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, Link } from "react-router-dom";
 import "./App.css";
 import R1 from "./components/routes/R1";
 import R2 from "./components/routes/R2";
@@ -11,15 +11,17 @@ import R404 from "./components/routes/R404";
 
 class App extends Component {
   state = {
-    ps: "123"
+    ps: "123",
+    ps2: "111"
   };
-
-  handlePsChange = event => {
-    // console.log(event.target.value)
-    // let state = {...this.state}
+//event -> target -> 
+  handlePsChange = ({target: input}) => {
+    let state = {...this.state}
     // let {ps} = state
-    // ps = event.target.value
-    this.setState({ ps: event.target.value });
+    // ps = input.value
+    state[input.name] = input.value
+    // this.setState({ ps: input.value });
+    this.setState({ ...state });
   };
 
   render() {
@@ -35,12 +37,21 @@ class App extends Component {
           <Redirect from="/r3" to="/r1" />
           <Redirect to="/404" />
         </Switch>
-        <input
-          type="text"
-          name="ps"
-          value={this.state.ps}
-          onChange={this.handlePsChange}
-        />
+        <Link to={"/param/"+this.state.ps}>Click to send</Link>
+        <form>
+          <input
+            type="text"
+            name="ps"
+            value={this.state.ps}
+            onChange={this.handlePsChange}
+          />
+          <input
+            type="text"
+            name="ps2"
+            value={this.state.ps2}
+            onChange={this.handlePsChange}
+          />
+        </form>
         {/* <CounterFather /> */}
         {/* <HookComponent /> */}
         {/* <Main /> */}
