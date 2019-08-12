@@ -8,6 +8,8 @@ import R2 from "./components/routes/R2";
 import RHome from "./components/routes/RHome";
 import R3 from "./components/routes/R3";
 import R404 from "./components/routes/R404";
+import RefsComponent from "./components/RefsComponent"
+import MainState from "./components/passState/MainState"
 
 class App extends Component {
   state = {
@@ -32,13 +34,14 @@ class App extends Component {
           <Route path="/r1" component={R1} />
           <Route path="/r2" component={R2} />
           <Route path="/param/:userid" component={R3} />
+          <Route path="/state" component={MainState} />
           {/* <Route path="/" exact component={RHome} /> */}
           <Route path="/404" component={R404} />
           <Redirect from="/r3" to="/r1" />
           <Redirect to="/404" />
         </Switch>
-        <Link to={"/param/"+this.state.ps}>Click to send</Link>
-        <form>
+        {/* <Link to={"/param/"+this.state.ps}>Click to send</Link> */}
+        {/* <form>
           <input
             type="text"
             name="ps"
@@ -52,6 +55,7 @@ class App extends Component {
             onChange={this.handlePsChange}
           />
         </form>
+        <RefsComponent></RefsComponent> */}
         {/* <CounterFather /> */}
         {/* <HookComponent /> */}
         {/* <Main /> */}
