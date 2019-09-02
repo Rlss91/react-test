@@ -26,6 +26,10 @@ span {
 .App-link {
   color: #61dafb;
 }
+.err{
+  background-color: red;
+  color: #fff;
+}
 
 @keyframes App-logo-spin {
   from {
