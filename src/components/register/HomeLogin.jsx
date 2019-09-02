@@ -16,7 +16,7 @@ export default class HomeLogin extends Component {
                 {
                     this.state.modelOpen
                     ?
-                    <Login onCloseModel={this.handleModel} />
+                    <Login onCloseModel={this.handleModel} nameB='4' />
                     :
                     <button onClick={this.handleModel}>open</button>
                 
