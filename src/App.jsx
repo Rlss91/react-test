@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import HomeLogin from "./components/register/HomeLogin"
+import Home from './components/hooks/Home'
 
 class App extends Component {
   state = {
@@ -36,12 +36,13 @@ class App extends Component {
           value={this.state.ps}
           onChange={this.handlePsChange}
         /> */}
-        <HomeLogin />
+        {/* <HomeLogin /> */}
         {/* <CounterFather /> */}
         {/* <HookComponent /> */}
         {/* <Main /> */}
         {/* <PagesMain /> */}
         {/* <Online /> */}
+        <Home />
       </div>
     );
   }

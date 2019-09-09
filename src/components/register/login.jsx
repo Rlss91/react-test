@@ -94,6 +94,7 @@ export default class Login extends Component {
         const result = Joi.validate({...this.state.inputs}, this.schema, { abortEarly: false });
         let arr = result.error.details.map(item => item.message)
         this.setState({error: [...arr]})
+        return arr.length == 0
         //console.log(result.error.details[0].message)
     }
 
@@ -120,7 +121,7 @@ export default class Login extends Component {
         //this.axiosGet('http://localhost:3001/api/',{})
         //send server request
         //this.fetchPost('http://localhost:3001/api/', this.state.inputs)
-        let data = await this.fetchPost('http://localhost:3001/api/admin', {token: this.state.token})
+        let data = await this.fetchPost('http://localhost:3030/api/admin', {token: this.state.token})
         console.log(data)
     }
 
