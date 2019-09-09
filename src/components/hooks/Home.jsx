@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Counter from './Counter';
 import CounterArr from './CounterArr';
 
@@ -30,6 +30,15 @@ export default function Home() {
         let arr = [...arrs, 0]
         setArrs(arr)
     }
+
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log('use effect')
+    },[arrs]);
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log('use effect 2')
+    },[]);
 
     return (
         <div>
